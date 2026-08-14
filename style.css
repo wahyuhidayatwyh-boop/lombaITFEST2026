@@ -2802,7 +2802,9 @@ html, body {
     background-size: cover;
     background-position: left center;
     background-repeat: no-repeat;
-    opacity: 0.85;
+    opacity: 0.45 !important;
+    filter: blur(2px) !important;
+    -webkit-filter: blur(2px) !important;
     z-index: 1;
     pointer-events: none;
   }
@@ -2817,7 +2819,9 @@ html, body {
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
-    opacity: 0.85;
+    opacity: 0.45 !important;
+    filter: blur(2px) !important;
+    -webkit-filter: blur(2px) !important;
     z-index: 1;
     pointer-events: none;
   }

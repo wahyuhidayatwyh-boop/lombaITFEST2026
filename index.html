@@ -76,8 +76,8 @@
       </p>
 
       <div class="hero-cta">
-        <a href="#produk-unggulan" class="btn btn-primary btn-lg">Jelajahi Produk Unggulan ↓</a>
-        <a href="#kontak" class="btn btn-outline-brown btn-lg">Konsultasi & Bergabung</a>
+        <a href="#produk-unggulan" class="btn btn-primary btn-lg">Jelajahi Produk Unggulan</a>
+        <a href="#kontak" onclick="openModal('modalConsultation'); return false;" class="btn btn-outline-brown btn-lg">Konsultasi & Bergabung</a>
       </div>
 
       <!-- Hero Stats Grid (100% UNIFIED NUMBERS: 350+ / 1.250+ / Rp45 Jt+ / 30%) -->
@@ -202,7 +202,7 @@
 <section class="section-py" id="fitur">
   <div class="container">
     <div class="text-center">
-      <p class="section-tag">✦ FITUR PLATFORM ✦</p>
+      <p class="section-tag">FITUR PLATFORM</p>
       <h2 class="section-title">Solusi <span>Terintegrasi</span> untuk UMKM Batik</h2>
       <p class="section-subtitle">Semua yang Anda butuhkan untuk mengelola dan mengembangkan usaha batik Anda.</p>
     </div>
@@ -217,7 +217,7 @@
           <h3>Katalog & Etalase Digital</h3>
           <p>Pamerkan produk batik Anda ke pembeli dari seluruh Indonesia bahkan mancanegara, lengkap dengan cerita filosofi motif yang memperkuat nilai jual.</p>
         </div>
-        <a href="#produk-unggulan" class="btn btn-gold btn-sm">Lihat Katalog →</a>
+        <a href="#produk-unggulan" class="btn btn-gold btn-sm">Lihat Katalog</a>
       </div>
 
       <!-- Feature 2 -->
@@ -229,7 +229,7 @@
           <h3>Group Buying Bahan Baku</h3>
           <p>Gabung dengan UMKM lain untuk membeli bahan baku dalam jumlah besar dan dapatkan harga grosir hingga 30% lebih murah dari pasaran.</p>
         </div>
-        <a href="#cara-kerja" class="btn btn-gold btn-sm">Lihat Penawaran →</a>
+        <a href="#cara-kerja" class="btn btn-gold btn-sm">Lihat Penawaran</a>
       </div>
 
       <!-- Feature 3 -->
@@ -241,7 +241,7 @@
           <h3>Dashboard Insight Prediktif</h3>
           <p>Catat penjualan dan stok dengan mudah, dapatkan rekomendasi otomatis kapan waktu terbaik untuk restock atau promosi berdasarkan data.</p>
         </div>
-        <a href="#kontak" class="btn btn-gold btn-sm">Pelajari Fitur →</a>
+        <a href="#kontak" class="btn btn-gold btn-sm">Pelajari Fitur</a>
       </div>
     </div>
   </div>
@@ -264,7 +264,7 @@
 
         <div class="product-vcard-top">
           <span class="product-vbadge">Batik Tulis</span>
-          <span class="product-vrating">★ 4.8</span>
+          <span class="product-vrating">4.8</span>
         </div>
 
         <div class="product-vcard-bottom">
@@ -282,7 +282,7 @@
 
         <div class="product-vcard-top">
           <span class="product-vbadge">Batik Cap</span>
-          <span class="product-vrating">★ 4.9</span>
+          <span class="product-vrating">4.9</span>
         </div>
 
         <div class="product-vcard-bottom">
@@ -300,7 +300,7 @@
 
         <div class="product-vcard-top">
           <span class="product-vbadge">Kombinasi</span>
-          <span class="product-vrating">★ 4.7</span>
+          <span class="product-vrating">4.7</span>
         </div>
 
         <div class="product-vcard-bottom">
@@ -318,7 +318,7 @@
 
         <div class="product-vcard-top">
           <span class="product-vbadge">Batik Colet</span>
-          <span class="product-vrating">★ 4.9</span>
+          <span class="product-vrating">4.9</span>
         </div>
 
         <div class="product-vcard-bottom">
@@ -603,59 +603,60 @@
 
         <div class="map-filter-item">
           <label>WhatsApp Official</label>
-          <span class="filter-val-text">+62 812-3456-7890</span>
+          <span class="filter-val-text">+62 838-4365-3251</span>
         </div>
 
-        <a href="#contactForm" class="map-filter-search-btn" aria-label="Cari Lokasi">
+        <button type="button" id="mapSearchBtn" class="map-filter-search-btn" aria-label="Cari Lokasi">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </a>
+        </button>
       </div>
     </div>
 
     <!-- Map Stage Container for Avatar Markers & Center Card (Floating Directly Over Section Map Background) -->
     <div class="map-stage-hero mt-8">
       <!-- Circular Avatar Pin Markers Floating Directly Over Background Map -->
-      <div class="map-avatar-marker marker-buaran" title="Klaster Buaran Pekalongan">
+      <div class="map-avatar-marker marker-buaran active" data-location="buaran" title="Klaster Buaran Pekalongan">
         <img src="image/gallery/doc_canting.png" alt="Buaran" />
       </div>
 
-      <div class="map-avatar-marker marker-wiradesa" title="Klaster Wiradesa Batik Tulis">
+      <div class="map-avatar-marker marker-wiradesa" data-location="wiradesa" title="Klaster Wiradesa Batik Tulis">
         <img src="image/gallery/doc_pewarnaan.png" alt="Wiradesa" />
       </div>
 
-      <div class="map-avatar-marker marker-kedungwuni" title="Klaster Kedungwuni Group Buying">
+      <div class="map-avatar-marker marker-kedungwuni" data-location="kedungwuni" title="Klaster Kedungwuni Group Buying">
         <img src="image/gallery/doc_penjemuran.png" alt="Kedungwuni" />
       </div>
 
-      <div class="map-avatar-marker marker-showroom" title="Showroom Batik Pekalongan">
+      <div class="map-avatar-marker marker-showroom" data-location="all" title="Showroom Batik Pekalongan">
         <img src="image/gallery/doc_pameran.png" alt="Showroom" />
       </div>
 
       <!-- Center Floating Property Preview Card (Exact Match to User Reference Image) -->
-      <div class="map-center-card">
+      <div class="map-center-card" id="mapCenterCard">
+        <button type="button" class="map-card-close" id="mapCardCloseBtn" aria-label="Tutup Detail">✕</button>
         <div class="map-card-img-wrap">
-          <img src="image/gallery/doc_canting.png" alt="Pusat Klaster Utama Pekalongan" />
-          <span class="map-card-tag">Pusat Utama</span>
+          <img src="image/gallery/doc_canting.png" id="mapCardImg" alt="Pusat Klaster Utama Pekalongan" />
+          <span class="map-card-tag" id="mapCardTag">Pusat Utama</span>
         </div>
         <div class="map-card-body">
-          <h3 class="map-card-title">Pusat Klaster Batik Pekalongan</h3>
+          <h3 class="map-card-title" id="mapCardTitle">Pusat Klaster Batik Pekalongan</h3>
           <p class="map-card-loc">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Buaran & Wiradesa, Pekalongan
+            <span id="mapCardLocText">Buaran & Wiradesa, Pekalongan</span>
           </p>
           <div class="map-card-stats">
-            <span><strong>350+</strong> UMKM</span>
-            <span><strong>85+</strong> Group Buying</span>
+            <span><strong id="mapCardStatUmkm">350+</strong> UMKM</span>
+            <span><strong id="mapCardStatGb">85+</strong> Group Buying</span>
           </div>
           <div class="map-card-action">
-            <span class="map-card-price">Pekalongan, Jateng</span>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="btn btn-brown btn-sm">Konsultasi ↗</a>
+            <span class="map-card-price" id="mapCardRegion">Pekalongan, Jateng</span>
+            <a href="https://wa.me/6283843653251" id="mapCardWaBtn" target="_blank" rel="noopener noreferrer" class="btn btn-brown btn-sm">Konsultasi</a>
           </div>
         </div>
 
         <!-- Pin Pointer Badge at Bottom (Exact Match) -->
-        <div class="map-card-pin-pointer" title="Total 350+ UMKM Terdaftar">
-          <span>350</span>
+        <div class="map-card-pin-pointer" id="mapCardPointer" title="Total 350+ UMKM Terdaftar">
+          <span id="mapCardPointerCount">350</span>
         </div>
       </div>
     </div>
@@ -673,7 +674,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <div class="contact-mini-label">WhatsApp Official</div>
-        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="contact-mini-val">+62 812-3456-7890</a>
+        <a href="https://wa.me/6283843653251" target="_blank" rel="noopener noreferrer" class="contact-mini-val">+62 838-4365-3251</a>
       </div>
 
       <!-- Item 2: Email -->
@@ -720,7 +721,7 @@
     </div>
 
     <div class="cta-actions">
-      <a href="#kontak" class="btn btn-white-solid btn-lg">
+      <a href="#kontak" onclick="openModal('modalConsultation'); return false;" class="btn btn-white-solid btn-lg">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         Konsultasi & Bergabung
       </a>
@@ -779,7 +780,7 @@
         <ul class="footer-links">
           <li><a href="#kontak">Pekalongan, Jawa Tengah</a></li>
           <li><a href="mailto:batiknusa.id@gmail.com">batiknusa.id@gmail.com</a></li>
-          <li><a href="https://wa.me/6281234567890" target="_blank">+62 812-3456-7890</a></li>
+          <li><a href="https://wa.me/6283843653251" target="_blank">+62 838-4365-3251</a></li>
         </ul>
       </div>
 
@@ -801,41 +802,154 @@
   </div>
 </footer>
 
-<!-- ========== MODAL: PRODUCT DETAIL QUICK VIEW ========== -->
+<!-- ========== MODAL: PRODUCT DETAIL PREVIEW ========== -->
 <div class="modal-overlay" id="modalProduct">
-  <div class="modal-card">
-    <button class="modal-close" onclick="closeModal('modalProduct')" aria-label="Tutup Pratinjau">
+  <div class="modal-card modal-product-card">
+    <button class="modal-close" onclick="closeModal('modalProduct')" aria-label="Tutup Detail">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <div style="position: relative; height: 260px; border-radius: 12px; overflow: hidden; margin-bottom: 20px; background: var(--cream-dark);">
-      <img id="modalProductImg" src="" alt="Detail Produk" style="width: 100%; height: 100%; object-fit: cover;" />
+    <div class="modal-product-img-wrap" id="modalProductImgWrap">
+      <img id="modalProductImg" src="" alt="Detail Produk" />
       <span id="modalProductBadge" class="product-badge"></span>
     </div>
-    <div id="modalProductRating" style="color: var(--gold); font-size: 13px; font-weight: 700; margin-bottom: 4px;"></div>
-    <h2 id="modalProductTitle" style="font-size: 24px; color: var(--navy); margin-bottom: 8px;"></h2>
-    <div id="modalProductSeller" style="font-size: 13px; color: var(--text-mid); margin-bottom: 12px; font-weight: 600;"></div>
-    <p id="modalProductDesc" style="font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 20px;"></p>
-    <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(200,147,58,0.2); padding-top: 16px;">
-      <div id="modalProductPrice" class="product-price" style="margin-bottom: 0;"></div>
-      <a href="#kontak" onclick="closeModal('modalProduct');" class="btn btn-brown btn-md">Tanyakan Karya via Kontak</a>
+    <div id="modalProductRating" class="modal-product-rating"></div>
+    <h2 id="modalProductTitle" class="modal-product-title"></h2>
+    <div id="modalProductSeller" class="modal-product-seller"></div>
+    <p id="modalProductDesc" class="modal-product-desc"></p>
+    <div class="modal-product-footer">
+      <div id="modalProductPrice" class="modal-product-price"></div>
+      <button type="button" onclick="openConsultationForProduct()" class="btn btn-brown btn-sm">Tanyakan Karya</button>
     </div>
+  </div>
+</div>
+
+<!-- ========== MODAL: FORM PEMESANAN & PERTANYAAN KARYA PRODUK ========== -->
+<div class="modal-overlay" id="modalProductOrder">
+  <div class="modal-card modal-product-order-card">
+    <button class="modal-close" onclick="closeModal('modalProductOrder')" aria-label="Tutup Form">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    
+    <div class="modal-consult-header" style="margin-bottom: 12px;">
+      <span class="modal-consult-badge">Formulir Pemesanan & Pertanyaan Karya</span>
+      <h2 class="modal-consult-title" style="font-size: 18px;">Pemesanan Karya Batik</h2>
+    </div>
+
+    <!-- Selected Product Summary Header Card -->
+    <div class="product-order-summary">
+      <img id="orderProductImg" src="" alt="Foto Produk" class="order-product-thumb" />
+      <div class="order-product-info">
+        <span id="orderProductBadge" class="order-product-badge"></span>
+        <h4 id="orderProductTitle" class="order-product-name"></h4>
+        <div id="orderProductSeller" class="order-product-seller"></div>
+        <div id="orderProductPrice" class="order-product-price"></div>
+      </div>
+    </div>
+
+    <!-- Buyer Order Form -->
+    <form id="productOrderForm" onsubmit="handleProductOrderSubmit(event)" class="modal-consult-form mt-2">
+      <div class="consult-form-group">
+        <label for="orderBuyerName">Nama Pemesan / Pembeli *</label>
+        <input type="text" id="orderBuyerName" class="consult-form-control" placeholder="Contoh: Hendra Wijaya" required />
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <div class="consult-form-group">
+          <label for="orderQty">Jumlah (Pcs) *</label>
+          <input type="number" id="orderQty" class="consult-form-control" value="1" min="1" max="100" required />
+        </div>
+        <div class="consult-form-group">
+          <label for="orderWa">WhatsApp Aktif *</label>
+          <input type="tel" id="orderWa" class="consult-form-control" placeholder="083843653251" required />
+        </div>
+      </div>
+
+      <div class="consult-form-group">
+        <label for="orderCity">Kota / Alamat Pengiriman *</label>
+        <input type="text" id="orderCity" class="consult-form-control" placeholder="Contoh: Semarang, Jawa Tengah" required />
+      </div>
+
+      <div class="consult-form-group">
+        <label for="orderNote">Catatan Khusus (Ukuran / Warna / Custom)</label>
+        <input type="text" id="orderNote" class="consult-form-control" placeholder="Contoh: Ukuran L, warna dasar biru" />
+      </div>
+
+      <button type="submit" class="btn btn-brown btn-lg w-100 mt-2" style="border-radius: 10px;">
+        <span>Pesan Karya via WhatsApp Direct</span>
+      </button>
+    </form>
   </div>
 </div>
 
 <!-- ========== MODAL: GALLERY PHOTO LIGHTBOX PREVIEW ========== -->
 <div class="modal-overlay" id="modalGallery">
-  <div class="modal-card" style="max-width: 720px;">
+  <div class="modal-card modal-gallery-card">
     <button class="modal-close" onclick="closeModal('modalGallery')" aria-label="Tutup Pratinjau">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <div style="position: relative; height: 380px; border-radius: 12px; overflow: hidden; margin-bottom: 20px; background: var(--cream-dark);">
-      <img id="modalGalleryImg" src="" alt="Foto Dokumentasi Fullscreen" style="width: 100%; height: 100%; object-fit: cover;" />
+    <div class="modal-gallery-img-wrap" id="modalGalleryImgWrap">
+      <img id="modalGalleryImg" src="" alt="Foto Dokumentasi Fullscreen" />
     </div>
-    <h2 id="modalGalleryTitle" style="font-size: 24px; color: var(--navy); margin-bottom: 8px;"></h2>
-    <p id="modalGalleryDesc" style="font-size: 14.5px; color: var(--text-mid); line-height: 1.65; margin-bottom: 20px;"></p>
-    <div style="display: flex; justify-content: flex-end;">
-      <button onclick="closeModal('modalGallery')" class="btn btn-primary btn-md">Tutup Pratinjau</button>
+    <h2 id="modalGalleryTitle" class="modal-gallery-title"></h2>
+    <p id="modalGalleryDesc" class="modal-gallery-desc"></p>
+    <div class="modal-gallery-actions">
+      <button onclick="closeModal('modalGallery')" class="btn btn-primary btn-sm">Tutup Pratinjau</button>
     </div>
+  </div>
+</div>
+
+<!-- ========== MODAL: KONSULTASI & PENDAFTARAN UMKM PLATFORM ========== -->
+<div class="modal-overlay" id="modalConsultation">
+  <div class="modal-card modal-consult-card">
+    <button class="modal-close" onclick="closeModal('modalConsultation')" aria-label="Tutup Form">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    
+    <div class="modal-consult-header">
+      <span class="modal-consult-badge">Formulir Resmi BatikNusa</span>
+      <h2 class="modal-consult-title">Konsultasi & Bergabung</h2>
+      <p class="modal-consult-desc">Daftarkan UMKM Anda atau konsultasikan kebutuhan usaha batik Pekalongan secara gratis.</p>
+    </div>
+
+    <form id="consultationForm" onsubmit="handleConsultationSubmit(event)" class="modal-consult-form">
+      <div class="consult-form-group">
+        <label for="consultName">Nama Pemilik / Pengrajin *</label>
+        <input type="text" id="consultName" class="consult-form-control" placeholder="Contoh: Ibu Sri Wahyuni" required />
+      </div>
+
+      <div class="consult-form-group">
+        <label for="consultBrand">Nama Usaha / Merk Batik *</label>
+        <input type="text" id="consultBrand" class="consult-form-control" placeholder="Contoh: Batik Sri Rejeki" required />
+      </div>
+
+      <div class="consult-form-group">
+        <label for="consultRegion">Lokasi / Klaster Pekalongan *</label>
+        <select id="consultRegion" class="consult-form-control" required>
+          <option value="Buaran">Buaran (Pusat Utama)</option>
+          <option value="Wiradesa">Wiradesa (Batik Tulis)</option>
+          <option value="Kedungwuni">Kedungwuni (Group Buying)</option>
+          <option value="Showroom Pekalongan">Pusat Kota Pekalongan</option>
+        </select>
+      </div>
+
+      <div class="consult-form-group">
+        <label for="consultService">Kebutuhan Utama *</label>
+        <select id="consultService" class="consult-form-control" required>
+          <option value="Pendaftaran Katalog Digital">Pendaftaran Etalase Katalog Digital</option>
+          <option value="Group Buying Bahan Baku">Ikut Group Buying Bahan Baku Grosir</option>
+          <option value="Pendampingan Usaha">Pendampingan & Manajemen Usaha</option>
+        </select>
+      </div>
+
+      <div class="consult-form-group">
+        <label for="consultWa">Nomor WhatsApp Aktif *</label>
+        <input type="tel" id="consultWa" class="consult-form-control" placeholder="Contoh: 083843653251" required />
+      </div>
+
+      <button type="submit" class="btn btn-gold btn-lg w-100 mt-2" style="border-radius: 10px;">
+        <span>Kirim via WhatsApp Direct</span>
+      </button>
+    </form>
   </div>
 </div>
 

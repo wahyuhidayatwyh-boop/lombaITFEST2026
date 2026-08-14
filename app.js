@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = document.getElementById('contactMessage')?.value || '';
 
       const waMessage = `Halo Tim BatikNusa,\n\nSaya: ${name}\nNomor WA: ${phone}\nTopik: ${topic}\n\nPesan:\n${message}`;
-      const waUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(waMessage)}`;
+      const waUrl = `https://wa.me/6283843653251?text=${encodeURIComponent(waMessage)}`;
 
       showToast(`Pesan dari "${name}" sedang dikirim via WhatsApp...`);
       setTimeout(() => {
@@ -234,13 +234,13 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // --- 7. Product Quick View Modal Population ---
-  const products = {
+  window.products = {
     1: {
       name: "Kain Batik Tulis Jlamprang Premium",
       badge: "Batik Tulis Canting",
       price: "Rp850.000",
       seller: "Batik Sri Rejeki (Wiradesa)",
-      rating: "★ 4.8 (32 ulasan)",
+      rating: "4.8 (32 ulasan)",
       img: "image/products/prod_jlamprang.png",
       desc: "Kain batik tulis autentik Pekalongan dengan motif geometris Jlamprang khas. Dibuat secara 100% manual menggosok canting malam oleh pengrajin berpengalaman selama 3-4 minggu."
     },
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
       badge: "Batik Cap Autentik",
       price: "Rp275.000",
       seller: "Batik Fauzi Craft (Buaran)",
-      rating: "★ 4.9 (48 ulasan)",
+      rating: "4.9 (48 ulasan)",
       img: "image/products/prod_sekar_jagad.png",
       desc: "Kemeja pria batik cap motif Sekar Jagad melambangkan keindahan dan keragaman budaya. Menggunakan katun primissima yang adem, halus, dan tahan luntur."
     },
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
       badge: "Batik Kombinasi",
       price: "Rp450.000",
       seller: "Batik Kartika Indah (Kedungwuni)",
-      rating: "★ 4.7 (19 ulasan)",
+      rating: "4.7 (19 ulasan)",
       img: "image/products/prod_terang_bulan.png",
       desc: "Kombinasi teknik cap dan sentuhan tulis pada motif Terang Bulan khas Pekalongan. Warna cerah khas pesisir yang anggun untuk busana formal maupun santai."
     },
@@ -267,25 +267,339 @@ document.addEventListener('DOMContentLoaded', () => {
       badge: "Batik Colet Pesisir",
       price: "Rp620.000",
       seller: "Batik Pekalongan Indah (Tirto)",
-      rating: "★ 4.9 (25 ulasan)",
+      rating: "4.9 (25 ulasan)",
       img: "image/products/prod_colet_pesisiran.png",
       desc: "Karya seni batik tulis colet khas pesisiran Pekalongan dengan gradasi warna alam yang kaya dan detail motif flora pesisir."
     }
   };
 
-  window.openProductDetail = function(productId) {
-    const p = products[productId];
-    if (!p) return;
+  window.activeProductData = null;
 
-    document.getElementById('modalProductTitle').textContent = p.name;
-    document.getElementById('modalProductBadge').textContent = p.badge;
-    document.getElementById('modalProductPrice').textContent = p.price;
-    document.getElementById('modalProductSeller').textContent = p.seller;
-    document.getElementById('modalProductRating').textContent = p.rating;
-    document.getElementById('modalProductImg').src = p.img;
-    document.getElementById('modalProductDesc').textContent = p.desc;
+  window.openProductDetail = function(productId) {
+    const p = window.products[productId];
+    if (!p) return;
+    window.activeProductData = p;
+
+    if (document.getElementById('modalProductTitle')) document.getElementById('modalProductTitle').textContent = p.name;
+    if (document.getElementById('modalProductBadge')) document.getElementById('modalProductBadge').textContent = p.badge;
+    if (document.getElementById('modalProductPrice')) document.getElementById('modalProductPrice').textContent = p.price;
+    if (document.getElementById('modalProductSeller')) document.getElementById('modalProductSeller').textContent = p.seller;
+    if (document.getElementById('modalProductRating')) document.getElementById('modalProductRating').textContent = p.rating;
+    if (document.getElementById('modalProductImg')) document.getElementById('modalProductImg').src = p.img;
+    if (document.getElementById('modalProductDesc')) document.getElementById('modalProductDesc').textContent = p.desc;
 
     openModal('modalProduct');
   };
 
+  // --- 8. Interactive Map & Cluster Filtering System ---
+  const mapData = {
+    buaran: {
+      title: "Pusat Klaster Batik Buaran",
+      tag: "Pusat Utama",
+      location: "Buaran, Kab. Pekalongan",
+      umkm: "150+",
+      gb: "45+",
+      pointer: "150",
+      region: "Pekalongan Selatan",
+      img: "image/gallery/doc_canting.png",
+      waText: "Halo Tim BatikNusa, saya ingin berkonsultasi mengenai Klaster Buaran (Pusat Utama).",
+      iframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31677.38241584906!2d109.6580000!3d-6.9150000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70258cb7d6c6e7%3A0x4027a76e352f750!2sBuaran%2C%20Pekalongan%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+    },
+    wiradesa: {
+      title: "Sentra Batik Tulis Wiradesa",
+      tag: "Spesialis Tulis",
+      location: "Wiradesa, Kab. Pekalongan",
+      umkm: "120+",
+      gb: "25+",
+      pointer: "120",
+      region: "Pekalongan Barat",
+      img: "image/gallery/doc_pewarnaan.png",
+      waText: "Halo Tim BatikNusa, saya berminat dengan produk & pendaftaran Klaster Batik Tulis Wiradesa.",
+      iframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31678.00000000000!2d109.6100000!3d-6.8900000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70240000000000%3A0x0!2sWiradesa%2C%20Pekalongan%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+    },
+    kedungwuni: {
+      title: "Posko Group Buying Kedungwuni",
+      tag: "Hub Bahan Baku",
+      location: "Kedungwuni, Kab. Pekalongan",
+      umkm: "80+",
+      gb: "60+",
+      pointer: "80",
+      region: "Pekalongan Timur",
+      img: "image/gallery/doc_penjemuran.png",
+      waText: "Halo Tim BatikNusa, saya ingin bertanya tentang program Group Buying Bahan Baku di Kedungwuni.",
+      iframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31676.00000000000!2d109.6800000!3d-6.9500000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70260000000000%3A0x0!2sKedungwuni%2C%20Pekalongan%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+    },
+    all: {
+      title: "Pusat Showroom Batik Pekalongan",
+      tag: "Showroom Utama",
+      location: "Pusat Kota Pekalongan, Jawa Tengah",
+      umkm: "350+",
+      gb: "85+",
+      pointer: "350",
+      region: "Pekalongan City",
+      img: "image/gallery/doc_pameran.png",
+      waText: "Halo Tim BatikNusa, saya ingin berkonsultasi mengenai platform BatikNusa.",
+      iframeUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63354.76483489812!2d109.6465494!3d-6.9080277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70258cb7d6c6e7%3A0x4027a76e352f750!2sPekalongan%2C%20Pekalongan%20City%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+    }
+  };
+
+  const servicePhotos = {
+    katalog: "image/products/prod_jlamprang.png",
+    patungan: "image/products/prod_sekar_jagad.png",
+    konsultasi: "image/backgrounds/about_klaster.png"
+  };
+
+  function updateMapSection(locationKey, serviceKey = 'all', notify = true, triggerSource = 'location') {
+    const data = mapData[locationKey] || mapData['all'];
+
+    // Select dynamic photo: Location photos ALWAYS take priority when pin or location select is used!
+    let cardPhoto = data.img;
+    if (triggerSource === 'service' && serviceKey && servicePhotos[serviceKey]) {
+      cardPhoto = servicePhotos[serviceKey];
+    }
+
+    const card = document.getElementById('mapCenterCard');
+    const cardImg = document.getElementById('mapCardImg');
+    const cardTag = document.getElementById('mapCardTag');
+    const cardTitle = document.getElementById('mapCardTitle');
+    const cardLocText = document.getElementById('mapCardLocText');
+    const cardStatUmkm = document.getElementById('mapCardStatUmkm');
+    const cardStatGb = document.getElementById('mapCardStatGb');
+    const cardRegion = document.getElementById('mapCardRegion');
+    const cardWaBtn = document.getElementById('mapCardWaBtn');
+    const cardPointerCount = document.getElementById('mapCardPointerCount');
+    const mapIframe = document.querySelector('.section-bg-map-container iframe');
+
+    if (card) {
+      // Pop up card on desktop when pin marker or filter is used
+      card.classList.add('active');
+      card.style.opacity = '0.3';
+      card.style.transform = 'translate(-50%, -46%) scale(0.95)';
+      setTimeout(() => {
+        if (cardImg) cardImg.src = cardPhoto;
+        if (cardTag) cardTag.textContent = data.tag;
+        if (cardTitle) cardTitle.textContent = data.title;
+        if (cardLocText) cardLocText.textContent = data.location;
+        if (cardStatUmkm) cardStatUmkm.textContent = data.umkm;
+        if (cardStatGb) cardStatGb.textContent = data.gb;
+        if (cardRegion) cardRegion.textContent = data.region;
+        if (cardPointerCount) cardPointerCount.textContent = data.pointer;
+
+        if (cardWaBtn) {
+          cardWaBtn.href = `https://wa.me/6283843653251?text=${encodeURIComponent(data.waText)}`;
+        }
+
+        card.style.opacity = '1';
+        card.style.transform = 'translate(-50%, -50%) scale(1)';
+      }, 150);
+    }
+
+    if (mapIframe && data.iframeUrl) {
+      mapIframe.src = data.iframeUrl;
+    }
+
+    // Synchronize Location Select Dropdown value
+    const locSelect = document.getElementById('mapFilterLocation');
+    if (locSelect && locSelect.value !== locationKey) {
+      locSelect.value = locationKey;
+    }
+
+    // Update marker pins active state
+    document.querySelectorAll('.map-avatar-marker').forEach(marker => {
+      const loc = marker.dataset.location;
+      if (loc === locationKey || (locationKey === 'all' && loc === 'all')) {
+        marker.classList.add('active');
+      } else {
+        marker.classList.remove('active');
+      }
+    });
+
+    if (notify) {
+      showToast(`Lokasi dipilih: ${data.title}`);
+    }
+  }
+
+  // Bind Close Button on Map Card (Desktop Pop-up close)
+  const cardCloseBtn = document.getElementById('mapCardCloseBtn');
+  if (cardCloseBtn) {
+    cardCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = document.getElementById('mapCenterCard');
+      if (card) card.classList.remove('active');
+      document.querySelectorAll('.map-avatar-marker').forEach(m => m.classList.remove('active'));
+    });
+  }
+
+  // Bind Location & Service Select Dropdowns
+  const locSelect = document.getElementById('mapFilterLocation');
+  const serviceSelect = document.getElementById('mapFilterService');
+  const searchBtn = document.getElementById('mapSearchBtn');
+
+  if (locSelect) {
+    locSelect.addEventListener('change', (e) => {
+      updateMapSection(e.target.value, serviceSelect ? serviceSelect.value : 'all', true, 'location');
+    });
+  }
+
+  if (serviceSelect) {
+    serviceSelect.addEventListener('change', (e) => {
+      updateMapSection(locSelect ? locSelect.value : 'all', e.target.value, true, 'service');
+    });
+  }
+
+  if (searchBtn) {
+    searchBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const locVal = locSelect ? locSelect.value : 'all';
+      const srvVal = serviceSelect ? serviceSelect.value : 'all';
+      updateMapSection(locVal, srvVal, true, 'location');
+    });
+  }
+
+  // Bind Pin Marker Clicks
+  document.querySelectorAll('.map-avatar-marker').forEach(marker => {
+    marker.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const loc = marker.dataset.location || 'all';
+      updateMapSection(loc, serviceSelect ? serviceSelect.value : 'all', true, 'location');
+    });
+  });
+
+  // --- 9. Mobile Testimonial Carousel Centering & Dynamic Focus Observer ---
+  const testiContainer = document.querySelector('.testi-clean-grid');
+  if (testiContainer) {
+    const updateActiveTestiCard = () => {
+      if (window.innerWidth <= 768) {
+        const testiCards = testiContainer.querySelectorAll('.testi-clean-item');
+        const containerCenter = testiContainer.scrollLeft + (testiContainer.offsetWidth / 2);
+        
+        let closestCard = null;
+        let minDistance = Infinity;
+
+        testiCards.forEach(card => {
+          const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+          const distance = Math.abs(containerCenter - cardCenter);
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestCard = card;
+          }
+        });
+
+        testiCards.forEach(card => {
+          if (card === closestCard) {
+            card.classList.add('active');
+          } else {
+            card.classList.remove('active');
+          }
+        });
+      }
+    };
+
+    const centerTestiCarousel = () => {
+      if (window.innerWidth <= 768) {
+        const testiCards = testiContainer.querySelectorAll('.testi-clean-item');
+        if (testiCards.length >= 2) {
+          const middleCard = testiCards[1]; // Card 2 (Bapak Ahmad Fauzi)
+          const containerWidth = testiContainer.offsetWidth;
+          const cardLeft = middleCard.offsetLeft;
+          const cardWidth = middleCard.offsetWidth;
+          testiContainer.scrollLeft = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+          updateActiveTestiCard();
+        }
+      }
+    };
+
+    testiContainer.addEventListener('scroll', updateActiveTestiCard, { passive: true });
+    setTimeout(centerTestiCarousel, 250);
+    window.addEventListener('resize', centerTestiCarousel);
+  }
+
 });
+
+// --- 10. Consultation & Registration Modal Form Handler ---
+function handleConsultationSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('consultName') ? document.getElementById('consultName').value : '';
+  const brand = document.getElementById('consultBrand') ? document.getElementById('consultBrand').value : '';
+  const region = document.getElementById('consultRegion') ? document.getElementById('consultRegion').value : '';
+  const service = document.getElementById('consultService') ? document.getElementById('consultService').value : '';
+  const wa = document.getElementById('consultWa') ? document.getElementById('consultWa').value : '';
+
+  const message = `Halo Tim BatikNusa, saya ingin berkonsultasi & mendaftar UMKM Batik:
+- Nama: ${name}
+- Brand/Usaha: ${brand}
+- Lokasi: ${region}
+- Kebutuhan: ${service}
+- WhatsApp: ${wa}`;
+
+  closeModal('modalConsultation');
+  showToast(`Formulir Konsultasi Terkirim! Membuka WhatsApp Official BatikNusa...`);
+
+  setTimeout(() => {
+    window.open(`https://wa.me/6283843653251?text=${encodeURIComponent(message)}`, '_blank');
+  }, 600);
+}
+
+// --- 11. Open Dedicated Product Order Form ---
+window.openConsultationForProduct = function(productId) {
+  if (productId && window.products && window.products[productId]) {
+    window.activeProductData = window.products[productId];
+  }
+
+  closeModal('modalProduct');
+  
+  if (window.activeProductData) {
+    const img = document.getElementById('orderProductImg');
+    const badge = document.getElementById('orderProductBadge');
+    const title = document.getElementById('orderProductTitle');
+    const seller = document.getElementById('orderProductSeller');
+    const price = document.getElementById('orderProductPrice');
+
+    if (img) img.src = window.activeProductData.img;
+    if (badge) badge.textContent = window.activeProductData.badge;
+    if (title) title.textContent = window.activeProductData.name;
+    if (seller) seller.textContent = window.activeProductData.seller;
+    if (price) price.textContent = window.activeProductData.price;
+  }
+
+  setTimeout(() => {
+    openModal('modalProductOrder');
+  }, 150);
+};
+
+// --- 12. Product Order Form Submit Handler ---
+window.handleProductOrderSubmit = function(e) {
+  e.preventDefault();
+  const buyerName = document.getElementById('orderBuyerName') ? document.getElementById('orderBuyerName').value : '';
+  const qty = document.getElementById('orderQty') ? document.getElementById('orderQty').value : '1';
+  const wa = document.getElementById('orderWa') ? document.getElementById('orderWa').value : '';
+  const city = document.getElementById('orderCity') ? document.getElementById('orderCity').value : '';
+  const note = document.getElementById('orderNote') ? document.getElementById('orderNote').value : '-';
+
+  const productName = window.activeProductData ? window.activeProductData.name : 'Karya Batik Pekalongan';
+  const productPrice = window.activeProductData ? window.activeProductData.price : '-';
+  const productSeller = window.activeProductData ? window.activeProductData.seller : '-';
+  const productBadge = window.activeProductData ? window.activeProductData.badge : '-';
+
+  const waMessage = `Halo BatikNusa & Pengrajin, saya ingin memesan / menanyakan karya batik berikut:
+
+DETAIL PRODUK:
+- Nama Karya: ${productName}
+- Harga: ${productPrice}
+- Pengrajin / Workshop: ${productSeller}
+- Jenis Batik: ${productBadge}
+
+DATA PEMESAN:
+- Nama Pemesan: ${buyerName}
+- Jumlah Pesanan: ${qty} pcs
+- Kota / Alamat: ${city}
+- WhatsApp Pemesan: ${wa}
+- Catatan Khusus: ${note}`;
+
+  closeModal('modalProductOrder');
+  showToast(`Formulir Pemesanan Karya Terkirim! Membuka WhatsApp Official BatikNusa...`);
+
+  setTimeout(() => {
+    window.open(`https://wa.me/6283843653251?text=${encodeURIComponent(waMessage)}`, '_blank');
+  }, 600);
+};

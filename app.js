@@ -267,6 +267,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Central Event Delegation for Clean HTML (Zero Inline onclick)
+  document.addEventListener('click', (e) => {
+    // 1. Open Modal (data-open-modal)
+    const openModalBtn = e.target.closest('[data-open-modal]');
+    if (openModalBtn) {
+      e.preventDefault();
+      const targetId = openModalBtn.getAttribute('data-open-modal');
+      if (targetId && typeof window.openModal === 'function') {
+        window.openModal(targetId);
+      }
+      return;
+    }
+
+    // 2. Close Modal (data-close-modal or .modal-close)
+    const closeModalBtn = e.target.closest('[data-close-modal], .modal-close');
+    if (closeModalBtn) {
+      e.preventDefault();
+      const targetId = closeModalBtn.getAttribute('data-close-modal');
+      if (targetId && typeof window.closeModal === 'function') {
+        window.closeModal(targetId);
+      } else {
+        const parentModal = closeModalBtn.closest('.modal-overlay');
+        if (parentModal) parentModal.classList.remove('open');
+        document.body.classList.remove('modal-open');
+      }
+      return;
+    }
+
+    // 3. Product Quick View (data-product-detail)
+    const productCard = e.target.closest('[data-product-detail]');
+    if (productCard) {
+      const prodId = productCard.getAttribute('data-product-detail');
+      if (prodId && typeof window.openProductDetail === 'function') {
+        window.openProductDetail(prodId);
+      }
+      return;
+    }
+
+    // 4. Bento Gallery Modal (data-gallery-title)
+    const galleryCard = e.target.closest('[data-gallery-title]');
+    if (galleryCard) {
+      const title = galleryCard.getAttribute('data-gallery-title');
+      const img = galleryCard.getAttribute('data-gallery-img');
+      const desc = galleryCard.getAttribute('data-gallery-desc');
+      if (title && img && typeof window.openGalleryModal === 'function') {
+        window.openGalleryModal(title, img, desc || '');
+      }
+      return;
+    }
+
+    // 5. Product Consultation Button in Modal
+    if (e.target.closest('#modalProductConsultBtn')) {
+      e.preventDefault();
+      if (typeof window.openConsultationForProduct === 'function') {
+        window.openConsultationForProduct();
+      }
+      return;
+    }
+  });
+
   // --- 7. Gallery Lightbox Modal Handler ---
   window.openGalleryModal = function (title, imgUrl, desc) {
     const modalImg = document.getElementById('modalGalleryImg');
@@ -1184,6 +1244,15 @@ DATA PEMESAN:
   // Initial theme application on DOM ready
   const initialTheme = window.getSavedTheme();
   window.applyTheme(initialTheme);
+
+  // Attach Theme Toggle Click Event Listener (Clean addEventListener)
+  const themeToggleBtn = document.getElementById('themeToggle');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.toggleTheme();
+    });
+  }
 
   // Listen for system color-scheme change
   if (window.matchMedia) {

@@ -4,19 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BatikNusa — Satu Platform, Seribu Canting | Digitalisasi UMKM Batik Pekalongan</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="BatikNusa — Satu Platform, Seribu Canting | Digitalisasi UMKM Batik Pekalongan" />
   <meta name="description" content="Platform digital terpadu untuk memberdayakan UMKM Batik Pekalongan. Etalase online autentik, group buying bahan baku grosir, dan dashboard insight prediktif." />
-  <link rel="icon" href="image/brand/logo.png" type="image/png" />
-  <link rel="apple-touch-icon" href="image/brand/logo.png" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <meta name="keywords" content="Batik Pekalongan, UMKM Batik, Batik Tulis, Batik Cap, Group Buying Bahan Baku, Digitalisasi UMKM, Satu Platform Seribu Canting, IT FEST 2026" />
+  <meta name="author" content="Tim BatikNusa - IT FEST 2026" />
+  <meta name="theme-color" content="#1B2B5E" />
+  <link rel="canonical" href="https://batiknusa.id/" />
 
-<!-- ========== NAVBAR ========== -->
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://batiknusa.id/" />
+  <meta property="og:title" content="BatikNusa — Satu Platform, Seribu Canting | Digitalisasi UMKM Batik Pekalongan" />
+  <meta property="og:description" content="Platform digital terpadu untuk memberdayakan UMKM Batik Pekalongan. Etalase online autentik, group buying bahan baku grosir, dan dashboard insight prediktif." />
+  <meta property="og:image" content="image/hero/hero_model.webp" />
+  <meta property="og:site_name" content="BatikNusa" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://batiknusa.id/" />
+  <meta name="twitter:title" content="BatikNusa — Satu Platform, Seribu Canting" />
+  <meta name="twitter:description" content="Platform digital terpadu untuk memberdayakan UMKM Batik Pekalongan melalui inovasi teknologi." />
+  <meta name="twitter:image" content="image/hero/hero_model.webp" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="image/brand/logo.webp" type="image/webp" />
+  <link rel="apple-touch-icon" href="image/brand/logo.webp" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Inline Theme Initialization (Zero Flash on Dark Mode) -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('batiknusa_theme_pref');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="preloader-active">
+
+<!-- ========== 0. PRELOADER / INITIAL LOADING SCREEN ========== -->
+<div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Memuat BatikNusa">
+  <div class="preloader-backdrop"></div>
+  <div class="preloader-content">
+    <div class="preloader-logo-wrap">
+      <div class="preloader-logo-glow"></div>
+      <img src="image/brand/logo.webp" alt="BatikNusa" class="preloader-logo-img" width="76" height="72" />
+    </div>
+    
+    <div class="preloader-text-wrap">
+      <div class="preloader-brand">BatikNusa</div>
+      <p class="preloader-tagline">Satu Platform, Seribu Canting</p>
+    </div>
+
+    <div class="preloader-progress-wrap">
+      <div class="preloader-bar-bg">
+        <div class="preloader-bar-fill" id="preloaderBar"></div>
+      </div>
+      <div class="preloader-meta">
+        <span class="preloader-status" id="preloaderStatus">Menghubungkan klaster batik...</span>
+        <span class="preloader-percent" id="preloaderPercent">0%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Skip to Content (Accessibility Keyboard Navigation) -->
+<a href="#beranda" class="skip-to-content">Langsung ke konten utama</a>
+
+<!-- ========== 1. NAVBAR ========== -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <!-- Logo -->
     <a href="#beranda" class="nav-logo">
-      <img src="image/brand/logo.png" alt="BatikNusa Logo" class="nav-logo-img" />
+      <img src="image/brand/logo.webp" alt="BatikNusa Logo" class="nav-logo-img" width="40" height="38" />
       <div class="nav-logo-text">
         <span class="nav-logo-name">BatikNusa</span>
         <span class="nav-logo-sub">Satu Platform, Seribu Canting</span>
@@ -32,7 +98,7 @@
       <li><a href="#cara-kerja" class="nav-link">Cara Kerja</a></li>
       <li><a href="#dokumentasi" class="nav-link">Galeri</a></li>
       <li class="nav-mobile-cta">
-        <a href="#kontak" class="btn btn-brown btn-sm" style="justify-content: center; width: 100%;">
+        <a href="#kontak" class="btn btn-brown btn-sm nav-mobile-cta-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Hubungi Kami
         </a>
@@ -41,28 +107,54 @@
 
     <!-- Actions (Desktop & Mobile Hamburger) -->
     <div class="nav-actions">
+      <!-- Dark Mode Theme Toggle Button -->
+      <button id="themeToggle" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Ubah mode tampilan" aria-pressed="false" title="Mode Gelap / Terang">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- Sound Toggle Button (Opt-in Ambient Sound) -->
+      <button id="soundToggle" class="sound-toggle-btn" aria-label="Aktifkan musik latar" aria-pressed="false" title="Musik Latar (Opt-in)">
+        <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+        <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        </svg>
+      </button>
+
       <a href="#kontak" class="btn btn-brown btn-sm nav-btn-cta">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span>Hubungi Kami</span>
       </a>
 
       <!-- Hamburger Menu for Mobile -->
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
 
-<!-- 1. HERO SECTION -->
+<!-- ========== 2. HERO SECTION ========== -->
 <section class="hero" id="beranda">
   <div class="hero-bg-left"></div>
   <div class="hero-bg-right"></div>
   <div class="hero-backdrop"></div>
   <div class="hero-inner">
     <div class="hero-content-left">
-
-
       <h1 class="hero-title">
         Satu Platform,<br><span class="highlight">Seribu Canting</span>
       </h1>
@@ -100,13 +192,14 @@
   </div>
 </section>
 
-<!-- 2. TENTANG KAMI / WARISAN BUDAYA SECTION -->
+<!-- ========== 3. TENTANG KAMI / WARISAN BUDAYA SECTION ========== -->
 <section class="section-py bg-cream-batik" id="tentang">
   <div class="container">
     <div class="about-grid">
       <!-- Image side with 1 Card below photo -->
-      <div class="about-image-wrap">
-        <img src="image/backgrounds/about_klaster.png" alt="Klaster Batik Pekalongan — Warisan Budaya" loading="lazy" />
+      <div class="about-image-wrap reveal-on-scroll">
+        <img src="image/backgrounds/about_klaster.webp" alt="Klaster Batik Pekalongan — Warisan Budaya" class="about-img-light" loading="lazy" width="1536" height="1024" />
+        <img src="image/backgrounds/about_klasterdark.webp" alt="Klaster Batik Pekalongan — Warisan Budaya" class="about-img-dark" loading="lazy" width="1536" height="1024" />
         
         <!-- Single Unified Card below photo (3 Concise Columns) -->
         <div class="about-facts-card">
@@ -141,24 +234,24 @@
       </div>
 
       <!-- Text side -->
-      <div class="about-text-wrap">
+      <div class="about-text-wrap reveal-on-scroll reveal-delay-1">
         <p class="section-tag">Mengenal BatikNusa</p>
         <h2 class="section-title">Merawat Warisan Budaya,<br><span>Menjawab Tantangan</span> Zaman</h2>
 
         <p>Pekalongan dikenal dunia sebagai "Kota Batik" dan telah diakui UNESCO sebagai bagian dari <em>Creative Cities Network</em> sejak 2014 — satu-satunya kota di Asia Tenggara yang meraih status kehormatan ini.</p>
 
-        <p style="margin-top: 14px;">Di balik kain-kain indah bermotif Jlamprang, Sekar Jagad, dan Terang Bulan, terdapat ribuan pelaku UMKM yang menggantungkan hidup dari sehelai canting dan setetes malam.</p>
+        <p class="about-desc-p">Di balik kain-kain indah bermotif Jlamprang, Sekar Jagad, dan Terang Bulan, terdapat ribuan pelaku UMKM yang menggantungkan hidup dari sehelai canting dan setetes malam.</p>
 
-        <p style="margin-top: 14px;">BatikNusa hadir sebagai pemberdaya digital untuk memperluas jangkauan etalase karya pengrajin, memfasilitasi belanja bahan baku kolektif, serta menyajikan analitik bisnis terpadu.</p>
+        <p class="about-desc-p">BatikNusa hadir sebagai pemberdaya digital untuk memperluas jangkauan etalase karya pengrajin, memfasilitasi belanja bahan baku kolektif, serta menyajikan analitik bisnis terpadu.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 3. MASALAH YANG KAMI JAWAB SECTION -->
+<!-- ========== 4. MASALAH YANG KAMI JAWAB SECTION ========== -->
 <section class="section-py bg-cream-batik" id="tantangan">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal-on-scroll">
       <p class="section-tag">Masalah yang Kami Jawab</p>
       <h2 class="section-title">Tiga Tantangan Besar<br><span>UMKM Batik</span> Hari Ini</h2>
       <p class="section-subtitle">Kami memahami kesulitan yang dihadapi pengrajin lokal. BatikNusa hadir dengan solusi nyata terintegrasi.</p>
@@ -166,7 +259,7 @@
 
     <div class="clean-grid-3">
       <!-- Item 1 -->
-      <div class="clean-item">
+      <div class="clean-item reveal-on-scroll reveal-delay-1">
         <div class="clean-item-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12A10 10 0 0 0 12 2v10z"/><path d="M12 12L2.1 10a10 10 0 1 0 19.8 2z"/></svg>
         </div>
@@ -175,7 +268,7 @@
       </div>
 
       <!-- Item 2 -->
-      <div class="clean-item">
+      <div class="clean-item reveal-on-scroll reveal-delay-2">
         <div class="clean-item-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         </div>
@@ -184,7 +277,7 @@
       </div>
 
       <!-- Item 3 -->
-      <div class="clean-item">
+      <div class="clean-item reveal-on-scroll reveal-delay-3">
         <div class="clean-item-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
@@ -195,10 +288,10 @@
   </div>
 </section>
 
-<!-- 4. PROGRAM / FITUR PLATFORM SECTION -->
+<!-- ========== 5. FITUR PLATFORM SECTION ========== -->
 <section class="section-py" id="fitur">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal-on-scroll">
       <p class="section-tag">FITUR PLATFORM</p>
       <h2 class="section-title">Solusi <span>Terintegrasi</span> untuk UMKM Batik</h2>
       <p class="section-subtitle">Semua yang Anda butuhkan untuk mengelola dan mengembangkan usaha batik Anda.</p>
@@ -206,7 +299,7 @@
 
     <div class="feature-rows mt-8">
       <!-- Feature 1 -->
-      <div class="feature-row-item">
+      <div class="feature-row-item reveal-on-scroll reveal-delay-1">
         <div class="feature-row-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         </div>
@@ -218,7 +311,7 @@
       </div>
 
       <!-- Feature 2 -->
-      <div class="feature-row-item">
+      <div class="feature-row-item reveal-on-scroll reveal-delay-2">
         <div class="feature-row-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
@@ -230,7 +323,7 @@
       </div>
 
       <!-- Feature 3 -->
-      <div class="feature-row-item">
+      <div class="feature-row-item reveal-on-scroll reveal-delay-3">
         <div class="feature-row-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
         </div>
@@ -244,19 +337,28 @@
   </div>
 </section>
 
-<!-- 5. KOLEKSI PRODUK UNGGULAN SECTION -->
+<!-- ========== 6. KOLEKSI PRODUK UNGGULAN SECTION ========== -->
 <section class="section-py bg-cream-batik" id="produk-unggulan">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal-on-scroll">
       <p class="section-tag">Koleksi Pilihan</p>
       <h2 class="section-title">Produk Batik <span>Unggulan</span> Pekalongan</h2>
       <p class="section-subtitle">Karya kain batik tulis canting & batik cap pilihan langsung dari workshop pengrajin terverifikasi.</p>
     </div>
 
-    <div class="product-vertical-grid mt-8">
-      <!-- Vertical Card 1 -->
-      <div class="product-vcard" onclick="openProductDetail(1)">
-        <img src="image/products/prod_jlamprang.png" alt="Kain Batik Tulis Jlamprang Premium" class="product-vcard-bg" />
+    <!-- Product Search / Filter Box -->
+    <div class="product-search-wrap reveal-on-scroll reveal-delay-1">
+      <div class="product-search-box">
+        <svg class="product-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="productSearch" class="product-search-input" placeholder="Cari motif batik... (contoh: Jlamprang, Sekar Jagad, Tulis)" aria-label="Cari motif atau nama produk batik" autocomplete="off" />
+        <button type="button" id="productSearchClear" class="product-search-clear" aria-label="Hapus teks pencarian" style="display: none;">✕</button>
+      </div>
+    </div>
+
+    <div class="product-vertical-grid mt-8" id="productGrid">
+      <!-- Vertical Card 1 (Page 1) -->
+      <div class="product-vcard reveal-on-scroll reveal-delay-1" data-page="1" onclick="openProductDetail(1)">
+        <img src="image/products/prod_jlamprang.webp" alt="Kain Batik Tulis Jlamprang Premium" class="product-vcard-bg" loading="lazy" width="1024" height="1024" />
         <div class="product-vcard-overlay"></div>
 
         <div class="product-vcard-top">
@@ -272,9 +374,9 @@
         </div>
       </div>
 
-      <!-- Vertical Card 2 -->
-      <div class="product-vcard" onclick="openProductDetail(2)">
-        <img src="image/products/prod_sekar_jagad.png" alt="Kemeja Batik Cap Sekar Jagad" class="product-vcard-bg" />
+      <!-- Vertical Card 2 (Page 1) -->
+      <div class="product-vcard reveal-on-scroll reveal-delay-2" data-page="1" onclick="openProductDetail(2)">
+        <img src="image/products/prod_sekar_jagad.webp" alt="Kemeja Batik Cap Sekar Jagad" class="product-vcard-bg" loading="lazy" width="1024" height="1024" />
         <div class="product-vcard-overlay"></div>
 
         <div class="product-vcard-top">
@@ -290,9 +392,9 @@
         </div>
       </div>
 
-      <!-- Vertical Card 3 -->
-      <div class="product-vcard" onclick="openProductDetail(3)">
-        <img src="image/products/prod_terang_bulan.png" alt="Kain Batik Kombinasi Terang Bulan" class="product-vcard-bg" />
+      <!-- Vertical Card 3 (Page 1) -->
+      <div class="product-vcard reveal-on-scroll reveal-delay-3" data-page="1" onclick="openProductDetail(3)">
+        <img src="image/products/prod_terang_bulan.webp" alt="Kain Batik Kombinasi Terang Bulan" class="product-vcard-bg" loading="lazy" width="736" height="736" />
         <div class="product-vcard-overlay"></div>
 
         <div class="product-vcard-top">
@@ -308,9 +410,9 @@
         </div>
       </div>
 
-      <!-- Vertical Card 4 -->
-      <div class="product-vcard" onclick="openProductDetail(4)">
-        <img src="image/products/prod_colet_pesisiran.png" alt="Kain Batik Colet Pesisiran" class="product-vcard-bg" />
+      <!-- Vertical Card 4 (Page 1) -->
+      <div class="product-vcard reveal-on-scroll reveal-delay-4" data-page="1" onclick="openProductDetail(4)">
+        <img src="image/products/prod_colet_pesisiran.webp" alt="Kain Batik Colet Pesisiran" class="product-vcard-bg" loading="lazy" width="1024" height="1024" />
         <div class="product-vcard-overlay"></div>
 
         <div class="product-vcard-top">
@@ -325,39 +427,130 @@
           <div class="product-vprice-btn">Rp620.000</div>
         </div>
       </div>
+
+      <!-- Vertical Card 5 (Page 2) -->
+      <div class="product-vcard" data-page="2" style="display: none;" onclick="openProductDetail(5)">
+        <img src="image/products/prod_tujuh_rupa.webp" alt="Kain Batik Tulis Motif Tujuh Rupa" class="product-vcard-bg" loading="lazy" width="800" height="800" />
+        <div class="product-vcard-overlay"></div>
+
+        <div class="product-vcard-top">
+          <span class="product-vbadge">Batik Tulis</span>
+          <span class="product-vrating">4.9</span>
+        </div>
+
+        <div class="product-vcard-bottom">
+          <div class="product-vrank">Koleksi #5</div>
+          <div class="product-vseller">Buaran • Batik Canting Emas</div>
+          <div class="product-vname">Kain Batik Tulis Motif Tujuh Rupa</div>
+          <div class="product-vprice-btn">Rp920.000</div>
+        </div>
+      </div>
+
+      <!-- Vertical Card 6 (Page 2) -->
+      <div class="product-vcard" data-page="2" style="display: none;" onclick="openProductDetail(6)">
+        <img src="image/products/prod_garutan.webp" alt="Kemeja Batik Cap Pria Garutan Modern" class="product-vcard-bg" loading="lazy" width="800" height="800" />
+        <div class="product-vcard-overlay"></div>
+
+        <div class="product-vcard-top">
+          <span class="product-vbadge">Batik Cap</span>
+          <span class="product-vrating">4.8</span>
+        </div>
+
+        <div class="product-vcard-bottom">
+          <div class="product-vrank">Koleksi #6</div>
+          <div class="product-vseller">Wiradesa • Tenun & Batik Jaya</div>
+          <div class="product-vname">Kemeja Batik Cap Pria Garutan Modern</div>
+          <div class="product-vprice-btn">Rp315.000</div>
+        </div>
+      </div>
+
+      <!-- Vertical Card 7 (Page 2) -->
+      <div class="product-vcard" data-page="2" style="display: none;" onclick="openProductDetail(7)">
+        <img src="image/products/prod_megamendung.webp" alt="Kain Batik Tulis Indigo Pesisiran" class="product-vcard-bg" loading="lazy" width="800" height="800" />
+        <div class="product-vcard-overlay"></div>
+
+        <div class="product-vcard-top">
+          <span class="product-vbadge">Batik Tulis</span>
+          <span class="product-vrating">4.9</span>
+        </div>
+
+        <div class="product-vcard-bottom">
+          <div class="product-vrank">Koleksi #7</div>
+          <div class="product-vseller">Tirto • Galeri Pesisir Indah</div>
+          <div class="product-vname">Kain Batik Tulis Indigo Pesisiran</div>
+          <div class="product-vprice-btn">Rp780.000</div>
+        </div>
+      </div>
+
+      <!-- Vertical Card 8 (Page 2) -->
+      <div class="product-vcard" data-page="2" style="display: none;" onclick="openProductDetail(8)">
+        <img src="image/products/prod_smok_pesisir.webp" alt="Kain Batik Cap Smok Pesisir Eksklusif" class="product-vcard-bg" loading="lazy" width="800" height="800" />
+        <div class="product-vcard-overlay"></div>
+
+        <div class="product-vcard-top">
+          <span class="product-vbadge">Batik Smok</span>
+          <span class="product-vrating">4.7</span>
+        </div>
+
+        <div class="product-vcard-bottom">
+          <div class="product-vrank">Koleksi #8</div>
+          <div class="product-vseller">Kedungwuni • Griya Batik Barokah</div>
+          <div class="product-vname">Kain Batik Cap Smok Pesisir Eksklusif</div>
+          <div class="product-vprice-btn">Rp385.000</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Pagination Controls -->
+    <div class="product-pagination-wrap" id="productPagination">
+      <button type="button" class="product-page-btn" id="prodPrevPage" aria-label="Halaman Sebelumnya" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button type="button" class="product-page-num active" data-page="1" aria-label="Ke Halaman 1">1</button>
+      <button type="button" class="product-page-num" data-page="2" aria-label="Ke Halaman 2">2</button>
+      <button type="button" class="product-page-btn" id="prodNextPage" aria-label="Halaman Selanjutnya">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+
+    <!-- Product Not Found Message -->
+    <div id="productNotFound" class="product-not-found" style="display: none;">
+      <div class="product-not-found-icon">🔍</div>
+      <h4 class="product-not-found-title">Produk Tidak Ditemukan</h4>
+      <p class="product-not-found-desc">Tidak ada motif batik yang sesuai dengan kata kunci pencarian Anda. Coba kata kunci lain seperti <em>Jlamprang</em>, <em>Sekar Jagad</em>, <em>Terang Bulan</em>, atau <em>Colet</em>.</p>
     </div>
   </div>
 </section>
 
-<!-- 6. CARA BERGABUNG (4 LANGKAH) SECTION -->
+<!-- ========== 7. CARA BERGABUNG SECTION ========== -->
 <section class="section-py bg-cream-batik" id="cara-kerja">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal-on-scroll">
       <p class="section-tag">Cara Bergabung</p>
       <h2 class="section-title">Mulai dalam <span>4 Langkah</span> Mudah</h2>
       <p class="section-subtitle">Proses pendaftaran cepat dan mudah didampingi oleh tim BatikNusa.</p>
     </div>
 
     <div class="steps-clean-grid mt-8">
-      <div class="step-clean-item">
+      <div class="step-clean-item reveal-on-scroll reveal-delay-1">
         <div class="step-num-badge">1</div>
         <h3>Konsultasi Usaha</h3>
         <p>Hubungi tim kami via WhatsApp atau form konsultasi untuk pendataan profil UMKM Anda.</p>
       </div>
 
-      <div class="step-clean-item">
+      <div class="step-clean-item reveal-on-scroll reveal-delay-2">
         <div class="step-num-badge">2</div>
         <h3>Upload Katalog</h3>
         <p>Unggah foto dan cerita keunikan motif batik Anda ke etalase katalog digital terpadu.</p>
       </div>
 
-      <div class="step-clean-item">
+      <div class="step-clean-item reveal-on-scroll reveal-delay-3">
         <div class="step-num-badge">3</div>
         <h3>Gabung Group Buying</h3>
         <p>Ikut patungan bahan baku grosir bersama UMKM lain di Pekalongan untuk pangkas biaya.</p>
       </div>
 
-      <div class="step-clean-item">
+      <div class="step-clean-item reveal-on-scroll reveal-delay-4">
         <div class="step-num-badge">4</div>
         <h3>Pantau Insight</h3>
         <p>Lihat rekomendasi analisis tren pasar otomatis untuk tingkatkan keuntungan bisnis Anda.</p>
@@ -366,10 +559,10 @@
   </div>
 </section>
 
-<!-- 7. DOKUMENTASI VISUAL SECTION (REPLACED TOTAL WITH VISUAL PHOTO GALLERY AS REQUESTED) -->
+<!-- ========== 8. GALERI DOKUMENTASI SECTION ========== -->
 <section class="section-py bg-cream-batik" id="dokumentasi">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal-on-scroll">
       <p class="section-tag">Galeri Kegiatan & Pengrajin</p>
       <h2 class="section-title">Dokumentasi <span>Komunitas</span> BatikNusa</h2>
       <p class="section-subtitle">Potret nyata proses pembuatan batik, workshop pengrajin lokal, dan aktivitas pemberdayaan UMKM Pekalongan.</p>
@@ -377,8 +570,8 @@
 
     <div class="bento-gallery-container mt-8">
       <!-- Card 1: Left Tall Card -->
-      <div class="bento-card bento-tall" onclick="openGalleryModal('Proses Batik Tulis Canting Malam', 'image/gallery/doc_canting.png', 'Dokumentasi detail proses melukiskan lilin malam panas secara manual menggunakan canting oleh pengrajin senior Pekalongan.')">
-        <img src="image/gallery/doc_canting.png" alt="Proses Canting Malam" class="bento-card-bg" />
+      <div class="bento-card bento-tall reveal-on-scroll reveal-delay-1" onclick="openGalleryModal('Proses Batik Tulis Canting Malam', 'image/gallery/doc_canting.webp', 'Dokumentasi detail proses melukiskan lilin malam panas secara manual menggunakan canting oleh pengrajin senior Pekalongan.')">
+        <img src="image/gallery/doc_canting.webp" alt="Proses Canting Malam" class="bento-card-bg" loading="lazy" width="1024" height="1024" />
         <div class="bento-card-overlay"></div>
         <div class="bento-card-content">
           <div class="bento-card-text">
@@ -386,7 +579,7 @@
             <h3 class="bento-title">Proses Canting Malam</h3>
             <p class="bento-subtitle">Wiradesa, Pekalongan</p>
           </div>
-          <button class="bento-arrow-btn" aria-label="Lihat foto">
+          <button class="bento-arrow-btn" aria-label="Lihat detail foto dokumentasi">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
@@ -395,8 +588,8 @@
       <!-- Center Stack: Top & Bottom Cards -->
       <div class="bento-stack">
         <!-- Card 2: Middle Top Card -->
-        <div class="bento-card bento-half" onclick="openGalleryModal('Pewarnaan & Pencelupan Alami', 'image/gallery/doc_pewarnaan.png', 'Dokumentasi pencelupan kain mori ke wadah pewarna alami khas pesisir Pekalongan.')">
-          <img src="image/gallery/doc_pewarnaan.png" alt="Pewarnaan Alami" class="bento-card-bg" />
+        <div class="bento-card bento-half reveal-on-scroll reveal-delay-2" onclick="openGalleryModal('Pewarnaan & Pencelupan Alami', 'image/gallery/doc_pewarnaan.webp', 'Dokumentasi pencelupan kain mori ke wadah pewarna alami khas pesisir Pekalongan.')">
+          <img src="image/gallery/doc_pewarnaan.webp" alt="Pewarnaan Alami" class="bento-card-bg" loading="lazy" width="1024" height="1024" />
           <div class="bento-card-overlay"></div>
           <div class="bento-card-content">
             <div class="bento-card-text">
@@ -404,15 +597,15 @@
               <h3 class="bento-title">Pewarnaan Alami</h3>
               <p class="bento-subtitle">Buaran, Pekalongan</p>
             </div>
-            <button class="bento-arrow-btn" aria-label="Lihat foto">
+            <button class="bento-arrow-btn" aria-label="Lihat detail foto dokumentasi">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </button>
           </div>
         </div>
 
         <!-- Card 3: Middle Bottom Card -->
-        <div class="bento-card bento-half" onclick="openGalleryModal('Penjemuran Kain Tradisional', 'image/gallery/doc_penjemuran.png', 'Dokumentasi pengeringan deretan kain batik di area terbuka desa kerajinan Pekalongan.')">
-          <img src="image/gallery/doc_penjemuran.png" alt="Penjemuran Tradisional" class="bento-card-bg" />
+        <div class="bento-card bento-half reveal-on-scroll reveal-delay-3" onclick="openGalleryModal('Penjemuran Kain Tradisional', 'image/gallery/doc_penjemuran.webp', 'Dokumentasi pengeringan deretan kain batik di area terbuka desa kerajinan Pekalongan.')">
+          <img src="image/gallery/doc_penjemuran.webp" alt="Penjemuran Tradisional" class="bento-card-bg" loading="lazy" width="1024" height="1024" />
           <div class="bento-card-overlay"></div>
           <div class="bento-card-content">
             <div class="bento-card-text">
@@ -420,7 +613,7 @@
               <h3 class="bento-title">Penjemuran Tradisional</h3>
               <p class="bento-subtitle">Kedungwuni, Pekalongan</p>
             </div>
-            <button class="bento-arrow-btn" aria-label="Lihat foto">
+            <button class="bento-arrow-btn" aria-label="Lihat detail foto dokumentasi">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </button>
           </div>
@@ -428,8 +621,8 @@
       </div>
 
       <!-- Card 4: Right Tall Card -->
-      <div class="bento-card bento-tall" onclick="openGalleryModal('Workshop & Pameran Hasil Karya', 'image/gallery/doc_pameran.png', 'Dokumentasi pameran kain batik karya komunitas pengrajin mitra BatikNusa.')">
-        <img src="image/gallery/doc_pameran.png" alt="Pameran Hasil Karya" class="bento-card-bg" />
+      <div class="bento-card bento-tall reveal-on-scroll reveal-delay-4" onclick="openGalleryModal('Workshop & Pameran Hasil Karya', 'image/gallery/doc_pameran.webp', 'Dokumentasi pameran kain batik karya komunitas pengrajin mitra BatikNusa.')">
+        <img src="image/gallery/doc_pameran.webp" alt="Pameran Hasil Karya" class="bento-card-bg" loading="lazy" width="1024" height="1024" />
         <div class="bento-card-overlay"></div>
         <div class="bento-card-content">
           <div class="bento-card-text">
@@ -437,7 +630,7 @@
             <h3 class="bento-title">Pameran Hasil Karya</h3>
             <p class="bento-subtitle">Showroom Batik Pekalongan</p>
           </div>
-          <button class="bento-arrow-btn" aria-label="Lihat foto">
+          <button class="bento-arrow-btn" aria-label="Lihat detail foto dokumentasi">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
@@ -446,50 +639,50 @@
   </div>
 </section>
 
-<!-- 8. CERITA SUKSES (TESTIMONI) SECTION -->
+<!-- ========== 9. CERITA SUKSES (TESTIMONI) SECTION ========== -->
 <section class="section-py" id="testimoni">
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal-on-scroll">
       <p class="section-tag">Cerita Sukses</p>
       <h2 class="section-title">Cerita dari Pengrajin yang <span>Bergabung</span></h2>
     </div>
 
     <div class="testi-clean-grid mt-8">
       <!-- Testi 1 -->
-      <div class="testi-clean-item">
+      <div class="testi-clean-item reveal-on-scroll reveal-delay-1">
         <div class="testi-quote-mark">“</div>
         <p>Sejak gabung group buying, biaya beli kain mori turun lumayan banyak. Sekarang modal hemat itu bisa dialokasikan buat produksi motif tulis baru.</p>
         <div class="testi-author">
           <div class="testi-avatar-initial">S</div>
           <div>
-            <div style="font-weight: 700; font-size: 14px; color: var(--navy);">Ibu Sri Wahyuni</div>
-            <div style="font-size: 12px; color: var(--text-light);">Batik Sri Rejeki, Wiradesa</div>
+            <div class="testi-author-name">Ibu Sri Wahyuni</div>
+            <div class="testi-author-role">Batik Sri Rejeki, Wiradesa</div>
           </div>
         </div>
       </div>
 
       <!-- Testi 2 -->
-      <div class="testi-clean-item">
+      <div class="testi-clean-item reveal-on-scroll reveal-delay-2">
         <div class="testi-quote-mark">“</div>
         <p>Dulu jualan cuma lewat grup WhatsApp tetangga. Sekarang produk saya bisa dipajang di etalase digital dan dilihat pembeli dari luar kota.</p>
         <div class="testi-author">
           <div class="testi-avatar-initial">A</div>
           <div>
-            <div style="font-weight: 700; font-size: 14px; color: var(--navy);">Bapak Ahmad Fauzi</div>
-            <div style="font-size: 12px; color: var(--text-light);">Batik Fauzi Craft, Buaran</div>
+            <div class="testi-author-name">Bapak Ahmad Fauzi</div>
+            <div class="testi-author-role">Batik Fauzi Craft, Buaran</div>
           </div>
         </div>
       </div>
 
       <!-- Testi 3 -->
-      <div class="testi-clean-item">
+      <div class="testi-clean-item reveal-on-scroll reveal-delay-3">
         <div class="testi-quote-mark">“</div>
         <p>Fitur pencatatan stok dan rekomendasi permintaannya membantu banget, jadi nggak lagi kehabisan bahan pas musim wisuda dan lebaran ramai.</p>
         <div class="testi-author">
           <div class="testi-avatar-initial">D</div>
           <div>
-            <div style="font-weight: 700; font-size: 14px; color: var(--navy);">Ibu Dewi Kartika</div>
-            <div style="font-size: 12px; color: var(--text-light);">Batik Kartika Indah, Kedungwuni</div>
+            <div class="testi-author-name">Ibu Dewi Kartika</div>
+            <div class="testi-author-role">Batik Kartika Indah, Kedungwuni</div>
           </div>
         </div>
       </div>
@@ -497,14 +690,14 @@
   </div>
 </section>
 
-<!-- 9. DAMPAK NYATA SECTION (UNIFIED STATS: 350+ / 1.250+ / 85+ / 30%) -->
+<!-- ========== 10. DAMPAK NYATA SECTION ========== -->
 <div class="dampak-bar">
   <div class="container">
-    <div class="text-center" style="margin-bottom: 24px;">
+    <div class="text-center dampak-header-wrap reveal-on-scroll">
       <p class="section-tag">Dampak Nyata Bersama BatikNusa</p>
     </div>
     <div class="dampak-stats-grid">
-      <div class="dampak-stat-item">
+      <div class="dampak-stat-item reveal-on-scroll reveal-delay-1">
         <div class="dampak-stat-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
         </div>
@@ -514,7 +707,7 @@
         </div>
       </div>
 
-      <div class="dampak-stat-item">
+      <div class="dampak-stat-item reveal-on-scroll reveal-delay-2">
         <div class="dampak-stat-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         </div>
@@ -524,7 +717,7 @@
         </div>
       </div>
 
-      <div class="dampak-stat-item">
+      <div class="dampak-stat-item reveal-on-scroll reveal-delay-3">
         <div class="dampak-stat-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 1 0 7.75"/></svg>
         </div>
@@ -534,7 +727,7 @@
         </div>
       </div>
 
-      <div class="dampak-stat-item">
+      <div class="dampak-stat-item reveal-on-scroll reveal-delay-4">
         <div class="dampak-stat-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
         </div>
@@ -547,7 +740,95 @@
   </div>
 </div>
 
-<!-- 10. PETA & LOKASI KLASTER SECTION (FULL-SECTION MAP BACKGROUND) -->
+<!-- ========== 11. FAQ (PERTANYAAN UMUM) SECTION ========== -->
+<section class="section-py bg-cream-batik" id="faq">
+  <div class="container">
+    <div class="text-center reveal-on-scroll">
+      <p class="section-tag">Tanya Jawab</p>
+      <h2 class="section-title">Pertanyaan yang Sering <span>Diajukan</span></h2>
+      <p class="section-subtitle">Temukan jawaban lengkap seputar keanggotaan UMKM, fitur group buying bahan baku, hingga jaminan keaslian batik di platform BatikNusa.</p>
+    </div>
+
+    <div class="faq-container mt-8">
+      <!-- FAQ Item 1 -->
+      <div class="faq-item reveal-on-scroll reveal-delay-1">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-title">Bagaimana cara UMKM mendaftar dan bergabung di BatikNusa?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Pendaftaran UMKM di BatikNusa <strong>100% gratis tanpa biaya registrasi</strong>. Anda cukup mengklik tombol "Konsultasi & Bergabung" atau menghubungi tim kami melalui WhatsApp resmi. Tim kurator kami akan membantu pendataan profil usaha, verifikasi karya pengrajin, serta pendampingan pembuatan foto dan deskripsi katalog digital.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item reveal-on-scroll reveal-delay-2">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-title">Bagaimana sistem patungan (Group Buying) bahan baku bekerja?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Fitur Group Buying mengumpulkan kebutuhan bahan baku (kain mori primissima/prima, lilin malam, dan pewarna remasol/alami) dari puluhan UMKM dalam satu klaster. Saat kuota pesanan grosir tercapai, BatikNusa memesan langsung ke distributor pabrik, sehingga pengrajin mendapatkan <strong>harga grosir yang lebih murah hingga 30%</strong> dibanding membeli eceran.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item reveal-on-scroll reveal-delay-3">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-title">Apakah kain batik yang terdaftar dijamin asli dari pengrajin lokal Pekalongan?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><strong>100% Asli & Autentik.</strong> Setiap produk yang tayang telah dikurasi dan diverifikasi langsung dari workshop pengrajin di sentra-sentra batik Pekalongan seperti Buaran, Wiradesa, Kedungwuni, dan Tirto. Setiap produk dilengkapi informasi transparan mengenai teknik pembuatan (Batik Tulis Canting, Cap Tembaga, atau Kombinasi Colet) serta filosofi motifnya.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="faq-item reveal-on-scroll reveal-delay-4">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-title">Apakah pembeli ritel atau korporasi bisa memesan dalam jumlah banyak (seragam/souvenir)?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Bisa. Selain melayani pembeli satuan/ritel, BatikNusa juga memfasilitasi pesanan institusi, instansi kedinasan, sekolah, dan korporasi untuk pembuatan seragam batik custom maupun souvenir khas Pekalongan dengan menghubungkan pesanan ke sentra pengrajin yang sesuai dengan kapasitas produksi.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="faq-item reveal-on-scroll reveal-delay-1">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span class="faq-q-title">Bagaimana jika UMKM belum terbiasa menggunakan platform digital?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>BatikNusa mengusung prinsip <em>human-centered onboarding</em>. Tim fasilitator kami terjun langsung ke klaster-klaster desa untuk memberikan pendampingan tatap muka, workshop berkala, serta konsultasi via WhatsApp agar pengrajin dari berbagai generasi dapat mengoperasikan katalog dan membaca insight pasar dengan sangat mudah.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 12. PETA & LOKASI KLASTER SECTION ========== -->
 <section class="section-py contact-section-mapbg bg-cream-batik" id="peta-lokasi">
   <!-- Full-Section Background Map Container -->
   <div class="section-bg-map-container">
@@ -565,17 +846,17 @@
 
   <!-- Foreground Content Floating Over Map Background -->
   <div class="container">
-    <div class="text-center">
+    <div class="text-center reveal-on-scroll">
       <p class="section-tag">Layanan & Informasi</p>
       <h2 class="section-title">Hubungi Kami atau <span>Kunjungi Klaster</span></h2>
       <p class="section-subtitle">BatikNusa hadir untuk mendampingi pendaftaran UMKM, informasi group buying bahan baku, dan konsultasi bisnis pengrajin Pekalongan.</p>
     </div>
 
-    <!-- Floating Pill Filter Bar (Matching User Reference Image) -->
-    <div class="text-center">
+    <!-- Floating Pill Filter Bar -->
+    <div class="text-center reveal-on-scroll reveal-delay-1">
       <div class="map-filter-bar mt-4">
         <div class="map-filter-item">
-          <label>Lokasi Klaster</label>
+          <label for="mapFilterLocation">Lokasi Klaster</label>
           <select id="mapFilterLocation">
             <option value="all">Semua Wilayah (Pekalongan)</option>
             <option value="buaran">Buaran (Pusat Utama)</option>
@@ -587,7 +868,7 @@
         <div class="map-filter-divider"></div>
 
         <div class="map-filter-item">
-          <label>Layanan UMKM</label>
+          <label for="mapFilterService">Layanan UMKM</label>
           <select id="mapFilterService">
             <option value="all">Semua Layanan</option>
             <option value="katalog">Etalase Digital</option>
@@ -609,30 +890,30 @@
       </div>
     </div>
 
-    <!-- Map Stage Container for Avatar Markers & Center Card (Floating Directly Over Section Map Background) -->
-    <div class="map-stage-hero mt-8">
+    <!-- Map Stage Container for Avatar Markers & Center Card -->
+    <div class="map-stage-hero mt-8 reveal-on-scroll reveal-delay-2">
       <!-- Circular Avatar Pin Markers Floating Directly Over Background Map -->
       <div class="map-avatar-marker marker-buaran active" data-location="buaran" title="Klaster Buaran Pekalongan">
-        <img src="image/gallery/doc_canting.png" alt="Buaran" />
+        <img src="image/gallery/doc_canting.webp" alt="Klaster Buaran" loading="lazy" width="54" height="54" />
       </div>
 
       <div class="map-avatar-marker marker-wiradesa" data-location="wiradesa" title="Klaster Wiradesa Batik Tulis">
-        <img src="image/gallery/doc_pewarnaan.png" alt="Wiradesa" />
+        <img src="image/gallery/doc_pewarnaan.webp" alt="Klaster Wiradesa" loading="lazy" width="54" height="54" />
       </div>
 
       <div class="map-avatar-marker marker-kedungwuni" data-location="kedungwuni" title="Klaster Kedungwuni Group Buying">
-        <img src="image/gallery/doc_penjemuran.png" alt="Kedungwuni" />
+        <img src="image/gallery/doc_penjemuran.webp" alt="Klaster Kedungwuni" loading="lazy" width="54" height="54" />
       </div>
 
       <div class="map-avatar-marker marker-showroom" data-location="all" title="Showroom Batik Pekalongan">
-        <img src="image/gallery/doc_pameran.png" alt="Showroom" />
+        <img src="image/gallery/doc_pameran.webp" alt="Showroom Pekalongan" loading="lazy" width="54" height="54" />
       </div>
 
-      <!-- Center Floating Property Preview Card (Exact Match to User Reference Image) -->
+      <!-- Center Floating Property Preview Card -->
       <div class="map-center-card" id="mapCenterCard">
         <button type="button" class="map-card-close" id="mapCardCloseBtn" aria-label="Tutup Detail">✕</button>
         <div class="map-card-img-wrap">
-          <img src="image/gallery/doc_canting.png" id="mapCardImg" alt="Pusat Klaster Utama Pekalongan" />
+          <img src="image/gallery/doc_canting.webp" id="mapCardImg" alt="Pusat Klaster Utama Pekalongan" loading="lazy" width="320" height="170" />
           <span class="map-card-tag" id="mapCardTag">Pusat Utama</span>
         </div>
         <div class="map-card-body">
@@ -647,11 +928,11 @@
           </div>
           <div class="map-card-action">
             <span class="map-card-price" id="mapCardRegion">Pekalongan, Jateng</span>
-            <a href="https://wa.me/6283843653251" id="mapCardWaBtn" target="_blank" rel="noopener noreferrer" class="btn btn-brown btn-sm">Konsultasi</a>
+            <a href="https://wa.me/6283843653251?text=Halo%20Tim%20BatikNusa%2C%20saya%20tertarik%20berkonsultasi%20mengenai%20Klaster%20Batik%20Pekalongan." id="mapCardWaBtn" target="_blank" rel="noopener noreferrer" class="btn btn-brown btn-sm">Konsultasi</a>
           </div>
         </div>
 
-        <!-- Pin Pointer Badge at Bottom (Exact Match) -->
+        <!-- Pin Pointer Badge at Bottom -->
         <div class="map-card-pin-pointer" id="mapCardPointer" title="Total 350+ UMKM Terdaftar">
           <span id="mapCardPointerCount">350</span>
         </div>
@@ -660,22 +941,22 @@
   </div>
 </section>
 
-<!-- 11. INFORMASI KONTAK & FORMULIR KONSULTASI SECTION -->
-<section class="section-py bg-cream-batik" id="kontak" style="padding-top: 40px;">
+<!-- ========== 12. INFORMASI KONTAK SECTION ========== -->
+<section class="section-py bg-cream-batik contact-section" id="kontak">
   <div class="container">
     <!-- 4 Modern Contact Info Items Grid -->
     <div class="contact-cards-grid">
       <!-- Item 1: WhatsApp -->
-      <div class="contact-mini-card">
+      <div class="contact-mini-card reveal-on-scroll reveal-delay-1">
         <div class="contact-mini-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <div class="contact-mini-label">WhatsApp Official</div>
-        <a href="https://wa.me/6283843653251" target="_blank" rel="noopener noreferrer" class="contact-mini-val">+62 838-4365-3251</a>
+        <a href="https://wa.me/6283843653251?text=Halo%20Tim%20BatikNusa%2C%20saya%20ingin%20bertanya%20informasi%20layanan%20dan%20pemberdayaan%20UMKM%20BatikNusa." target="_blank" rel="noopener noreferrer" class="contact-mini-val">+62 838-4365-3251</a>
       </div>
 
       <!-- Item 2: Email -->
-      <div class="contact-mini-card">
+      <div class="contact-mini-card reveal-on-scroll reveal-delay-2">
         <div class="contact-mini-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
@@ -684,7 +965,7 @@
       </div>
 
       <!-- Item 3: Location -->
-      <div class="contact-mini-card">
+      <div class="contact-mini-card reveal-on-scroll reveal-delay-3">
         <div class="contact-mini-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
@@ -693,7 +974,7 @@
       </div>
 
       <!-- Item 4: Penyelenggara -->
-      <div class="contact-mini-card">
+      <div class="contact-mini-card reveal-on-scroll reveal-delay-4">
         <div class="contact-mini-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
@@ -701,17 +982,15 @@
         <div class="contact-mini-val">IT FEST 2026 — UIN Gus Dur</div>
       </div>
     </div>
-
-    </div>
   </div>
 </section>
 
-<!-- 12. CTA AKHIR SECTION -->
+<!-- ========== 13. CTA AKHIR SECTION ========== -->
 <section class="cta-banner" id="daftar">
   <div class="cta-decor-left"></div>
   <div class="cta-decor-right"></div>
 
-  <div class="container cta-inner">
+  <div class="container cta-inner reveal-on-scroll">
     <div class="cta-text-wrap">
       <h2>Bersama BatikNusa,<br>Majukan Batik Pekalongan!</h2>
       <p>Bergabunglah bersama ratusan UMKM Batik Pekalongan untuk tumbuh bersama melalui teknologi digital.</p>
@@ -719,7 +998,7 @@
 
     <div class="cta-actions">
       <a href="#kontak" onclick="openModal('modalConsultation'); return false;" class="btn btn-white-solid btn-lg">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         Konsultasi & Bergabung
       </a>
       <a href="#produk-unggulan" class="btn btn-outline-white btn-lg">
@@ -730,22 +1009,22 @@
   </div>
 </section>
 
-<!-- 12. FOOTER -->
+<!-- ========== 14. FOOTER ========== -->
 <footer class="footer" id="footer">
   <div class="container">
     <div class="footer-grid">
       <!-- Col 1: Brand & Description -->
       <div>
         <div class="footer-logo-wrap">
-          <img src="image/brand/logo.png" alt="BatikNusa Logo" class="footer-logo-img" />
+          <img src="image/brand/logo.webp" alt="BatikNusa Logo" class="footer-logo-img" loading="lazy" width="32" height="30" />
           <span class="footer-logo-name">BatikNusa</span>
         </div>
         <p class="footer-desc">Platform digital terpadu untuk memberdayakan UMKM Batik Pekalongan melalui inovasi teknologi.</p>
-        <div style="display: flex; gap: 12px; margin-top: 16px;">
-          <a href="#beranda" aria-label="Instagram" style="color: rgba(255,255,255,0.7);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#beranda" aria-label="Facebook" style="color: rgba(255,255,255,0.7);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#beranda" aria-label="Twitter" style="color: rgba(255,255,255,0.7);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-          <a href="#beranda" aria-label="YouTube" style="color: rgba(255,255,255,0.7);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        <div class="footer-social-links">
+          <a href="#beranda" aria-label="Instagram" class="footer-social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#beranda" aria-label="Facebook" class="footer-social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#beranda" aria-label="Twitter" class="footer-social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#beranda" aria-label="YouTube" class="footer-social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
         </div>
       </div>
 
@@ -777,7 +1056,7 @@
         <ul class="footer-links">
           <li><a href="#kontak">Pekalongan, Jawa Tengah</a></li>
           <li><a href="mailto:batiknusa.id@gmail.com">batiknusa.id@gmail.com</a></li>
-          <li><a href="https://wa.me/6283843653251" target="_blank">+62 838-4365-3251</a></li>
+          <li><a href="https://wa.me/6283843653251?text=Halo%20Tim%20BatikNusa%2C%20saya%20ingin%20berkonsultasi%20terkait%20platform%20BatikNusa." target="_blank" rel="noopener noreferrer">+62 838-4365-3251</a></li>
         </ul>
       </div>
 
@@ -785,6 +1064,7 @@
       <div>
         <h4>Dukungan</h4>
         <ul class="footer-links">
+          <li><a href="#faq">Tanya Jawab (FAQ)</a></li>
           <li><a href="#kontak">Konsultasi UMKM</a></li>
           <li><a href="#fitur">Group Buying</a></li>
         </ul>
@@ -799,14 +1079,14 @@
   </div>
 </footer>
 
-<!-- ========== MODAL: PRODUCT DETAIL PREVIEW ========== -->
-<div class="modal-overlay" id="modalProduct">
+<!-- ========== 15. MODAL: PRODUCT DETAIL PREVIEW ========== -->
+<div class="modal-overlay" id="modalProduct" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
   <div class="modal-card modal-product-card">
-    <button class="modal-close" onclick="closeModal('modalProduct')" aria-label="Tutup Detail">
+    <button class="modal-close" onclick="closeModal('modalProduct')" aria-label="Tutup jendela detail produk">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="modal-product-img-wrap" id="modalProductImgWrap">
-      <img id="modalProductImg" src="" alt="Detail Produk" />
+      <img id="modalProductImg" src="image/products/prod_jlamprang.webp" alt="Detail Produk" width="600" height="400" />
       <span id="modalProductBadge" class="product-badge"></span>
     </div>
     <div id="modalProductRating" class="modal-product-rating"></div>
@@ -820,21 +1100,21 @@
   </div>
 </div>
 
-<!-- ========== MODAL: FORM PEMESANAN & PERTANYAAN KARYA PRODUK ========== -->
-<div class="modal-overlay" id="modalProductOrder">
+<!-- ========== 16. MODAL: FORM PEMESANAN KARYA ========== -->
+<div class="modal-overlay" id="modalProductOrder" role="dialog" aria-modal="true" aria-labelledby="modalProductOrderHeading">
   <div class="modal-card modal-product-order-card">
-    <button class="modal-close" onclick="closeModal('modalProductOrder')" aria-label="Tutup Form">
+    <button class="modal-close" onclick="closeModal('modalProductOrder')" aria-label="Tutup jendela formulir pemesanan">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     
-    <div class="modal-consult-header" style="margin-bottom: 12px;">
+    <div class="modal-consult-header modal-consult-header-compact">
       <span class="modal-consult-badge">Formulir Pemesanan & Pertanyaan Karya</span>
-      <h2 class="modal-consult-title" style="font-size: 18px;">Pemesanan Karya Batik</h2>
+      <h2 class="modal-consult-title modal-title-sm" id="modalProductOrderHeading">Pemesanan Karya Batik</h2>
     </div>
 
     <!-- Selected Product Summary Header Card -->
     <div class="product-order-summary">
-      <img id="orderProductImg" src="" alt="Foto Produk" class="order-product-thumb" />
+      <img id="orderProductImg" src="image/products/prod_jlamprang.webp" alt="Foto Produk" class="order-product-thumb" width="80" height="80" />
       <div class="order-product-info">
         <span id="orderProductBadge" class="order-product-badge"></span>
         <h4 id="orderProductTitle" class="order-product-name"></h4>
@@ -844,26 +1124,30 @@
     </div>
 
     <!-- Buyer Order Form -->
-    <form id="productOrderForm" onsubmit="handleProductOrderSubmit(event)" class="modal-consult-form mt-2">
+    <form id="productOrderForm" class="modal-consult-form mt-2" novalidate>
       <div class="consult-form-group">
         <label for="orderBuyerName">Nama Pemesan / Pembeli *</label>
         <input type="text" id="orderBuyerName" class="consult-form-control" placeholder="Contoh: Hendra Wijaya" required />
+        <span class="field-error" id="orderBuyerNameError"></span>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <div class="form-row-2col">
         <div class="consult-form-group">
           <label for="orderQty">Jumlah (Pcs) *</label>
           <input type="number" id="orderQty" class="consult-form-control" value="1" min="1" max="100" required />
+          <span class="field-error" id="orderQtyError"></span>
         </div>
         <div class="consult-form-group">
           <label for="orderWa">WhatsApp Aktif *</label>
-          <input type="tel" id="orderWa" class="consult-form-control" placeholder="083843653251" required />
+          <input type="tel" id="orderWa" class="consult-form-control" placeholder="Contoh: 083843653251" required />
+          <span class="field-error" id="orderWaError"></span>
         </div>
       </div>
 
       <div class="consult-form-group">
         <label for="orderCity">Kota / Alamat Pengiriman *</label>
         <input type="text" id="orderCity" class="consult-form-control" placeholder="Contoh: Semarang, Jawa Tengah" required />
+        <span class="field-error" id="orderCityError"></span>
       </div>
 
       <div class="consult-form-group">
@@ -871,52 +1155,54 @@
         <input type="text" id="orderNote" class="consult-form-control" placeholder="Contoh: Ukuran L, warna dasar biru" />
       </div>
 
-      <button type="submit" class="btn btn-brown btn-lg w-100 mt-2" style="border-radius: 10px;">
+      <button type="submit" class="btn btn-brown btn-lg w-100 mt-2 btn-rounded-10">
         <span>Pesan Karya via WhatsApp Direct</span>
       </button>
     </form>
   </div>
 </div>
 
-<!-- ========== MODAL: GALLERY PHOTO LIGHTBOX PREVIEW ========== -->
-<div class="modal-overlay" id="modalGallery">
+<!-- ========== 17. MODAL: GALLERY LIGHTBOX PREVIEW ========== -->
+<div class="modal-overlay" id="modalGallery" role="dialog" aria-modal="true" aria-labelledby="modalGalleryTitle">
   <div class="modal-card modal-gallery-card">
-    <button class="modal-close" onclick="closeModal('modalGallery')" aria-label="Tutup Pratinjau">
+    <button class="modal-close" onclick="closeModal('modalGallery')" aria-label="Tutup jendela pratinjau">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="modal-gallery-img-wrap" id="modalGalleryImgWrap">
-      <img id="modalGalleryImg" src="" alt="Foto Dokumentasi Fullscreen" />
+      <img id="modalGalleryImg" src="image/gallery/doc_canting.webp" alt="Foto Dokumentasi Fullscreen" width="1024" height="768" />
     </div>
     <h2 id="modalGalleryTitle" class="modal-gallery-title"></h2>
     <p id="modalGalleryDesc" class="modal-gallery-desc"></p>
     <div class="modal-gallery-actions">
-      <button onclick="closeModal('modalGallery')" class="btn btn-primary btn-sm">Tutup Pratinjau</button>
+      <button type="button" onclick="closeModal('modalGallery')" class="btn btn-primary btn-sm">Tutup Pratinjau</button>
     </div>
   </div>
 </div>
 
-<!-- ========== MODAL: KONSULTASI & PENDAFTARAN UMKM PLATFORM ========== -->
-<div class="modal-overlay" id="modalConsultation">
+<!-- ========== 18. MODAL: KONSULTASI & PENDAFTARAN UMKM ========== -->
+<div class="modal-overlay" id="modalConsultation" role="dialog" aria-modal="true" aria-labelledby="modalConsultationTitle">
   <div class="modal-card modal-consult-card">
-    <button class="modal-close" onclick="closeModal('modalConsultation')" aria-label="Tutup Form">
+    <button class="modal-close" onclick="closeModal('modalConsultation')" aria-label="Tutup jendela formulir">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     
     <div class="modal-consult-header">
       <span class="modal-consult-badge">Formulir Resmi BatikNusa</span>
-      <h2 class="modal-consult-title">Konsultasi & Bergabung</h2>
+      <h2 class="modal-consult-title" id="modalConsultationTitle">Konsultasi & Bergabung</h2>
       <p class="modal-consult-desc">Daftarkan UMKM Anda atau konsultasikan kebutuhan usaha batik Pekalongan secara gratis.</p>
     </div>
 
-    <form id="consultationForm" onsubmit="handleConsultationSubmit(event)" class="modal-consult-form">
+    <form id="consultationForm" class="modal-consult-form" novalidate>
       <div class="consult-form-group">
         <label for="consultName">Nama Pemilik / Pengrajin *</label>
         <input type="text" id="consultName" class="consult-form-control" placeholder="Contoh: Ibu Sri Wahyuni" required />
+        <span class="field-error" id="consultNameError"></span>
       </div>
 
       <div class="consult-form-group">
         <label for="consultBrand">Nama Usaha / Merk Batik *</label>
         <input type="text" id="consultBrand" class="consult-form-control" placeholder="Contoh: Batik Sri Rejeki" required />
+        <span class="field-error" id="consultBrandError"></span>
       </div>
 
       <div class="consult-form-group">
@@ -941,16 +1227,17 @@
       <div class="consult-form-group">
         <label for="consultWa">Nomor WhatsApp Aktif *</label>
         <input type="tel" id="consultWa" class="consult-form-control" placeholder="Contoh: 083843653251" required />
+        <span class="field-error" id="consultWaError"></span>
       </div>
 
-      <button type="submit" class="btn btn-gold btn-lg w-100 mt-2" style="border-radius: 10px;">
+      <button type="submit" class="btn btn-gold btn-lg w-100 mt-2 btn-rounded-10">
         <span>Kirim via WhatsApp Direct</span>
       </button>
     </form>
   </div>
 </div>
 
-<!-- ========== MOBILE BOTTOM NAVIGATION BAR (FIXED NAVY & GOLD) ========== -->
+<!-- ========== 19. MOBILE BOTTOM NAVIGATION BAR ========== -->
 <nav class="mobile-bottom-nav" aria-label="Navigasi Seluler Bottom Bar">
   <a href="#beranda" class="mobile-bottom-nav-item active">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -974,6 +1261,20 @@
   </a>
 </nav>
 
+<!-- ========== 20. FLOATING ACTION BUTTONS (BACK TO TOP & WHATSAPP) ========== -->
+<div class="floating-actions-container">
+  <!-- Back to Top Button (Appears on Scroll > 400px) -->
+  <button type="button" id="backToTop" class="floating-btn back-to-top-btn" aria-label="Kembali ke atas halaman" title="Kembali ke Atas">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Floating WhatsApp Direct Button -->
+  <a href="https://wa.me/6283843653251?text=Halo%20Tim%20BatikNusa%2C%20saya%20ingin%20konsultasi%20layanan%20dan%20kemitraan%20UMKM%20BatikNusa." target="_blank" rel="noopener noreferrer" id="floatingWaBtn" class="floating-btn floating-wa-btn" aria-label="Hubungi kami via WhatsApp" title="Hubungi Kami via WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.96.523 1.996.8 2.796.8 3.183 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.787-5.77-5.787zm3.387 8.163c-.14.394-.712.729-1.025.774-.298.043-.687.067-1.11-.07-.275-.089-.63-.205-1.077-.398-1.895-.819-3.125-2.73-3.22-2.856-.095-.126-.774-1.03-.774-1.964s.489-1.393.664-1.583c.175-.19.382-.238.51-.238.127 0 .254.002.365.008.118.006.276-.045.432.33.16.386.547 1.332.595 1.43.048.098.08.213.016.341-.064.128-.096.208-.191.32-.096.112-.202.25-.288.336-.096.096-.197.2-.085.392.112.193.499.824 1.072 1.334.738.657 1.36.86 1.552.956.193.096.305.08.418-.048.112-.128.481-.56.61-.752.128-.193.257-.16.433-.096.176.064 1.117.527 1.31.623.193.096.321.144.369.224.048.08.048.464-.092.858zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.98-1.306A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.637 0-3.163-.483-4.444-1.314l-.319-.208-2.955.775.789-2.88-.228-.363A8.132 8.132 0 0 1 3.833 12c0-4.503 3.664-8.167 8.167-8.167 4.503 0 8.167 3.664 8.167 8.167 0 4.503-3.664 8.167-8.167 8.167z"/></svg>
+  </a>
+</div>
+
+<!-- JavaScript -->
 <script src="app.js"></script>
 </body>
 </html>

@@ -32,6 +32,21 @@
   <link rel="icon" href="image/brand/logo.webp" type="image/webp" />
   <link rel="apple-touch-icon" href="image/brand/logo.webp" />
 
+  <!-- Preconnect to Google Fonts & CDN Origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Preload Critical LCP & Brand Assets (FetchPriority High) -->
+  <link rel="preload" as="image" href="image/hero/hero_model.webp" fetchpriority="high" type="image/webp" />
+  <link rel="preload" as="image" href="image/brand/logo.webp" fetchpriority="high" type="image/webp" />
+
+  <!-- Google Fonts: Non-blocking async load with &display=swap -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" />
+  </noscript>
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
@@ -147,6 +162,9 @@
     </div>
   </div>
 </nav>
+
+<!-- ========== MAIN CONTENT LANDMARK ========== -->
+<main id="mainContent">
 
 <!-- ========== 2. HERO SECTION ========== -->
 <section class="hero" id="beranda">
@@ -1008,6 +1026,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- ========== 14. FOOTER ========== -->
 <footer class="footer" id="footer">
@@ -1030,7 +1049,7 @@
 
       <!-- Col 2: Navigasi Internal -->
       <div>
-        <h4>Navigasi</h4>
+        <h3 class="footer-title">Navigasi</h3>
         <ul class="footer-links">
           <li><a href="#beranda">Beranda</a></li>
           <li><a href="#tentang">Tentang Kami</a></li>
@@ -1041,7 +1060,7 @@
 
       <!-- Col 3: Program & Galeri -->
       <div>
-        <h4>Program & Galeri</h4>
+        <h3 class="footer-title">Program & Galeri</h3>
         <ul class="footer-links">
           <li><a href="#fitur">Fitur Platform</a></li>
           <li><a href="#cara-kerja">Cara Bergabung</a></li>
@@ -1052,17 +1071,17 @@
 
       <!-- Col 4: Informasi Kontak -->
       <div>
-        <h4>Informasi Kontak</h4>
+        <h3 class="footer-title">Informasi Kontak</h3>
         <ul class="footer-links">
           <li><a href="#kontak">Pekalongan, Jawa Tengah</a></li>
           <li><a href="mailto:batiknusa.id@gmail.com">batiknusa.id@gmail.com</a></li>
-          <li><a href="https://wa.me/6283843653251?text=Halo%20Tim%20BatikNusa%2C%20saya%20ingin%20berkonsultasi%20terkait%20platform%20BatikNusa." target="_blank" rel="noopener noreferrer">+62 838-4365-3251</a></li>
+          <li><a href="https://wa.me/6283843653251?text=Halo%20Tim%20BatikNusa%2C%20saya%20ingin%20berkonsultasi%20terkait%20platform%20BatikNusa." target="_blank" rel="noopener noreferrer" aria-label="Hubungi WhatsApp Official BatikNusa">+62 838-4365-3251</a></li>
         </ul>
       </div>
 
       <!-- Col 5: Dukungan -->
       <div>
-        <h4>Dukungan</h4>
+        <h3 class="footer-title">Dukungan</h3>
         <ul class="footer-links">
           <li><a href="#faq">Tanya Jawab (FAQ)</a></li>
           <li><a href="#kontak">Konsultasi UMKM</a></li>
